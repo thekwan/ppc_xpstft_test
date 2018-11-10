@@ -1,0 +1,28 @@
+Command line:
+   isim.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  47710
+
+Fri Nov  9 00:14:54 2018
+
+
+ Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 182.415 Meg
+
+ Total Signals          : 104
+ Total Nets             : 255
+ Total Signal Drivers   : 51
+ Total Blocks           : 9
+ Total Primitive Blocks : 8
+ Total Processes        : 36
+ Total Traceable Variables  : 47
+ Total Scalar Nets and Variables : 850
+
+ Total Simulation Time: 0.25 sec
+
+ Current Memory Usage: 251.625 Meg
+
+Fri Nov  9 00:15:15 2018
+

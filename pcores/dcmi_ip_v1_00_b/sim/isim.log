@@ -1,0 +1,61 @@
+ISim log file
+Running: ./isim.exe -gui 
+ISim P.40xd (signature 0xfbc00daa)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# run 500us
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /frame_gen_tb/dut_det/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /frame_gen_tb/dut_det/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 0 ps, Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /frame_gen_tb/dut_det/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /frame_gen_tb/dut_det/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 10200 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 20440 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 30680 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 40920 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 51160 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 61400 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 71640 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 81880 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 92120 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 102360 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 112600 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 122840 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 135720 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 145960 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 156200 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 166440 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 176680 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 186920 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 198440 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 208680 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 218920 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 229160 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 239400 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 249640 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 261160 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 271400 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 281640 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 291880 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 302120 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 312360 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 323880 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 334120 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 344360 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 354600 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 364840 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 375080 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 386600 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 396840 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 407080 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 417320 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 427560 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 437800 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 449320 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 459560 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 469800 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 480040 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 490280 ns(1), Instance /frame_gen_tb/dut_gen/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated

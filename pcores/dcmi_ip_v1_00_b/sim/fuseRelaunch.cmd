@@ -1,0 +1,1 @@
+-incremental "work.frame_gen_tb" "work.glbl" -prj "frame_gen.prj" -o "isim.exe" 

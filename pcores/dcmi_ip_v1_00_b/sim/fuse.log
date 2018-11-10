@@ -1,0 +1,31 @@
+Running: /opt/Xilinx/14.3/ISE_DS/ISE/bin/lin64/unwrapped/fuse -incremental work.frame_gen_tb work.glbl -prj frame_gen.prj -o isim.exe 
+ISim P.40xd (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "/opt/Xilinx/14.3/ISE_DS/ISE/verilog/src/glbl.v" into library work
+Parsing VHDL file "../hdl/vhdl/frame_gen.vhd" into library work
+Parsing VHDL file "../hdl/vhdl/frame_det.vhd" into library work
+Parsing VHDL file "frame_gen_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 113960 KB
+Fuse CPU Usage: 1060 ms
+Compiling module glbl
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package vcomponents
+Compiling package numeric_std
+Compiling architecture imp of entity frame_gen [frame_gen_default]
+Compiling architecture imp of entity frame_det [frame_det_default]
+Compiling architecture imp of entity frame_gen_tb
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 11 VHDL Units
+Compiled 1 Verilog Units
+Built simulation executable isim.exe
+Fuse Memory Usage: 676348 KB
+Fuse CPU Usage: 1260 ms
+GCC CPU Usage: 260 ms
