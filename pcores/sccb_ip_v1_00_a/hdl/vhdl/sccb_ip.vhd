@@ -133,7 +133,7 @@ use plbv46_slave_single_v1_01_a.plbv46_slave_single;
 --   Sl_MIRQ                      -- Slave interrupt indicator
 ------------------------------------------------------------------------------
 
-entity sccb_ip_test is
+entity sccb_ip is
   generic
   (
     -- ADD USER GENERICS BELOW THIS LINE ---------------
@@ -222,13 +222,13 @@ entity sccb_ip_test is
   attribute SIGIS of SPLB_Clk      : signal is "CLK";
   attribute SIGIS of SPLB_Rst      : signal is "RST";
 
-end entity sccb_ip_test;
+end entity sccb_ip ;
 
 ------------------------------------------------------------------------------
 -- Architecture section
 ------------------------------------------------------------------------------
 
-architecture IMP of sccb_ip_test is
+architecture IMP of sccb_ip is
 
   ------------------------------------------
   -- Array of base/high address pairs for each address range

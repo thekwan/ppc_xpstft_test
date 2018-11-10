@@ -1,7 +1,7 @@
 CipWiz::SetVersion "14.3";
 CipWiz::SetFlow "CREATE";
 CipWiz::SetParameter "ProjectDir" "/home/deokhwan/Work/FPGA/ppc_sccb_ip";
-CipWiz::SetParameter "IpName" "sccb_ip_test";
+CipWiz::SetParameter "IpName" "sccb_ip";
 CipWiz::SetParameter "IpVersion" "1.00.a";
 CipWiz::SetParameter "SimulatorName" "isim";
 CipWiz::SetParameter "HdlLanguage" "2";
