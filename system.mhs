@@ -76,6 +76,9 @@
  PORT dcmi_ip_0_HREF_pin = dcmi_ip_0_HREF, DIR = I
  PORT dcmi_ip_0_PixelClk_pin = dcmi_ip_0_PixelClk, DIR = I
  PORT dcmi_ip_0_PixelData_pin = dcmi_ip_0_PixelData, DIR = I, VEC = [0:7]
+ PORT sccb_ip_0_Sda_sccb_pin = sccb_ip_0_Sda_sccb, DIR = IO
+ PORT sccb_ip_0_Scl_sccb_pin = sccb_ip_0_Scl_sccb, DIR = IO
+ PORT XCLK_25MHZ = clock_generator_0_CLKOUT6, DIR = O, SIGIS = CLK, CLK_FREQ = 25000000
 
 
 BEGIN ppc440_virtex5
@@ -474,5 +477,15 @@ BEGIN dcmi_ip
  PORT HREF = dcmi_ip_0_HREF
  PORT PixelClk = dcmi_ip_0_PixelClk
  PORT PixelData = dcmi_ip_0_PixelData
+END
+
+BEGIN sccb_ip
+ PARAMETER INSTANCE = sccb_ip_0
+ PARAMETER HW_VER = 1.00.a
+ PARAMETER C_BASEADDR = 0x8F000000
+ PARAMETER C_HIGHADDR = 0x8F000FFF
+ BUS_INTERFACE SPLB = plb_v46_0
+ PORT Sda_sccb = sccb_ip_0_Sda_sccb
+ PORT Scl_sccb = sccb_ip_0_Scl_sccb
 END
 
