@@ -29,5 +29,5 @@ ICacheAddr: xps_bram_if_cntlr_1,
 DCacheAddr: DDR2_SDRAM,
 DCacheAddr: xps_bram_if_cntlr_1,
 Processor: ppc440_0
-ElfImp: SDK/SDK_Export/bootloader/Release/bootloader.elf
+ElfImp: 
 ElfSim: 

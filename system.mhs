@@ -72,6 +72,10 @@
  PORT xps_tft_0_TFT_IIC_SCL_pin = xps_tft_0_TFT_IIC_SCL, DIR = IO
  PORT xps_tft_0_TFT_IIC_SDA_pin = xps_tft_0_TFT_IIC_SDA, DIR = IO
  PORT xps_tft_0_reset_pin = net_vcc, DIR = O, SIGIS = NONE
+ PORT dcmi_ip_0_VSYNC_pin = dcmi_ip_0_VSYNC, DIR = I
+ PORT dcmi_ip_0_HREF_pin = dcmi_ip_0_HREF, DIR = I
+ PORT dcmi_ip_0_PixelClk_pin = dcmi_ip_0_PixelClk, DIR = I
+ PORT dcmi_ip_0_PixelData_pin = dcmi_ip_0_PixelData, DIR = I, VEC = [0:7]
 
 
 BEGIN ppc440_virtex5
@@ -457,5 +461,18 @@ BEGIN xps_tft
  PORT TFT_DVI_DATA = xps_tft_0_TFT_DVI_DATA
  PORT TFT_IIC_SCL = xps_tft_0_TFT_IIC_SCL
  PORT TFT_IIC_SDA = xps_tft_0_TFT_IIC_SDA
+END
+
+BEGIN dcmi_ip
+ PARAMETER INSTANCE = dcmi_ip_0
+ PARAMETER HW_VER = 1.00.b
+ PARAMETER C_BASEADDR = 0x8E000000
+ PARAMETER C_HIGHADDR = 0x8E000FFF
+ BUS_INTERFACE MPLB = plb_v46_0
+ BUS_INTERFACE SPLB = plb_v46_0
+ PORT VSYNC = dcmi_ip_0_VSYNC
+ PORT HREF = dcmi_ip_0_HREF
+ PORT PixelClk = dcmi_ip_0_PixelClk
+ PORT PixelData = dcmi_ip_0_PixelData
 END
 

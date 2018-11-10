@@ -1,0 +1,43 @@
+
+**** Build of configuration Debug for project xps_tft_test_run ****
+
+make all 
+Building file: ../src/helloworld.c
+Invoking: PowerPC gcc compiler
+powerpc-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../xps_tft_test_run_bsp/ppc440_0/include -mcpu=440 -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o"src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: PowerPC gcc compiler
+powerpc-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../xps_tft_test_run_bsp/ppc440_0/include -mcpu=440 -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o"src/platform.o" "../src/platform.c"
+../src/platform.c: In function ‘enable_caches’:
+../src/platform.c:63: warning: integer constant is too large for ‘long’ type
+Finished building: ../src/platform.c
+../src/platform.c:63: warning: large integer implicitly truncated to unsigned type
+ 
+Building target: xps_tft_test_run.elf
+../src/platform.c:64: warning: integer constant is too large for ‘long’ type
+Invoking: PowerPC gcc linker
+powerpc-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xps_tft_test_run_bsp/ppc440_0/lib -mcpu=440 -o"xps_tft_test_run.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../src/platform.c:64: warning: large integer implicitly truncated to unsigned type
+Finished building target: xps_tft_test_run.elf
+ 
+Invoking: PowerPC Print Size
+powerpc-eabi-size xps_tft_test_run.elf  |tee "xps_tft_test_run.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   3022	    312	     28	   3362	    d22	xps_tft_test_run.elf
+Finished building: xps_tft_test_run.elf.size
+ 
+Invoking: Xilinx ELF Check
+elfcheck xps_tft_test_run.elf -hw ../../ppc_xpstft_test_hw_platform/system.xml -pe ppc440_0  |tee "xps_tft_test_run.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.3 Build EDK_P.40xd
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../ppc_xpstft_test_hw_platform/system.xml -pe
+ppc440_0 xps_tft_test_run.elf 
+
+ELF file	: xps_tft_test_run.elf
+elfcheck passed.
+Finished building: xps_tft_test_run.elf.elfcheck
+ 

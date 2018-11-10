@@ -1,0 +1,18 @@
+#Sat Nov 10 18:44:08 KST 2018
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.bss=xps_bram_if_cntlr_1
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.sdata2=xps_bram_if_cntlr_1
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:Heap-size=1024
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.sbss=xps_bram_if_cntlr_1
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.rodata=xps_bram_if_cntlr_1
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:Heap=ddr2_sdram_MEM_BASEADDR
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.data=xps_bram_if_cntlr_1
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:Stack=ddr2_sdram_MEM_BASEADDR
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.rodata1=xps_bram_if_cntlr_1
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.vectors=xps_bram_if_cntlr_1
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.sbss2=xps_bram_if_cntlr_1
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.fixup=xps_bram_if_cntlr_1
+eclipse.preferences.version=1
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.text=xps_bram_if_cntlr_1
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:Stack-size=1024
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.data1=xps_bram_if_cntlr_1
+com.xilinx.sdk.linkgen.prefs.xps_tft_test_run\:.sdata=xps_bram_if_cntlr_1
