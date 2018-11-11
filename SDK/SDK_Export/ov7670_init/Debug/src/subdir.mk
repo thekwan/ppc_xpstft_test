@@ -6,6 +6,7 @@
 C_SRCS += \
 ../src/main.c \
 ../src/sccb.c \
+../src/ov7670_eval_camera.c \
 ../src/platform.c 
 
 LD_SRCS += \
@@ -14,11 +15,13 @@ LD_SRCS += \
 OBJS += \
 ./src/main.o \
 ./src/sccb.o \
+../src/ov7670_eval_camera.o \
 ./src/platform.o 
 
 C_DEPS += \
 ./src/main.d \
 ./src/sccb.d \
+../src/ov7670_eval_camera.d \
 ./src/platform.d 
 
 

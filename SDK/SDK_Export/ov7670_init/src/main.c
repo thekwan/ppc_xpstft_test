@@ -33,6 +33,7 @@ int main()
 	u8 reg;
     init_platform();
 
+#if 0
     print("*****************************************\n\r");
     print("* SCCB protocol Test Program            *\n\r");
 	sccb_reset( OV7670_DEV_SLAVE_ADDR );
@@ -46,6 +47,10 @@ int main()
 	putnum( reg );
     print("\n\r");
     print("*****************************************\n\r");
+#else
+	ov7670_init();
+	ov7670_reg_check();
+#endif
 
     cleanup_platform();
 

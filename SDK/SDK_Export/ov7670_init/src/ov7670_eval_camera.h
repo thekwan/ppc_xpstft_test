@@ -168,4 +168,6 @@ struct regval_list {
 	uint8_t value;
 };
 
+void ov7670_Init(void);
+
 #endif

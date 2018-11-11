@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "ov7670_eval_camera.h"
 #include "sccb.h"
 
@@ -329,6 +330,28 @@ int ov7670_set_hw(int hstart, int hstop, int vstart, int vstop)
 /*
  * Write a list of register settings; ff/ff stops the process.
  */
+static int ov7670_check_array(struct regval_list *vals)
+{
+	while (vals->reg_num != 0xff || vals->value != 0xff) {
+		uint8_t value = sccb_read_reg(vals->reg_num);
+		if(vals->value == value) {
+			print("REG[0x");
+			putnum(vals->reg_num);
+			print("]     CHECKED\n");
+		}
+		else {
+			print("REG[0x");
+			putnum(vals->reg_num);
+			print("]     INVALID\n");
+		}
+		vals++;
+	}
+	return 0;
+}
+
+/*
+ * Write a list of register settings; ff/ff stops the process.
+ */
 static int ov7670_write_array(struct regval_list *vals)
 {
 	while (vals->reg_num != 0xff || vals->value != 0xff) {
@@ -348,7 +371,13 @@ static int ov7670_reset(void)
 	return 0;
 }
 
-void BSP_OV7670_Init( )
+void ov7670_reg_check( void ) {
+	ov7670_check_array(ov7670_default_regs);
+	ov7670_check_array(ov7670_fmt_rgb565);
+	return;
+}
+
+void ov7670_Init( )
 {
 	ov7670_reset();
 
@@ -368,8 +397,6 @@ void BSP_OV7670_Init( )
 	sccb_write_reg( 0x12, 0x80 );   // COM7[7]=1: Resets all registers to default values
 	sccb_write_reg( 0x12, 0x14 );   // COM7[2]=1: RGB selection
 	                                // COM7[4]=1: Output format QVGA selection
-
-
 	sccb_write_reg( 0x40, 0xd0 );   // COM7[7:6]=11: Output range 00 ~ FF
 	                                // COM7[5:4]=01: RGB 565 format
 #endif
