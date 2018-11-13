@@ -1,6 +1,7 @@
 #ifndef _OV7670_EVAL_CAMERA_H_
 #define _OV7670_EVAL_CAMERA_H_
 
+#include <stdint.h>
 
 /*
  * The 7670 sits on i2c with ID 0x42
@@ -168,6 +169,6 @@ struct regval_list {
 	uint8_t value;
 };
 
-void ov7670_Init(void);
+void ov7670_init(void);
 
 #endif

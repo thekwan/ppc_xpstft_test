@@ -15,13 +15,13 @@ LD_SRCS += \
 OBJS += \
 ./src/main.o \
 ./src/sccb.o \
-../src/ov7670_eval_camera.o \
+./src/ov7670_eval_camera.o \
 ./src/platform.o 
 
 C_DEPS += \
 ./src/main.d \
 ./src/sccb.d \
-../src/ov7670_eval_camera.d \
+./src/ov7670_eval_camera.d \
 ./src/platform.d 
 
 

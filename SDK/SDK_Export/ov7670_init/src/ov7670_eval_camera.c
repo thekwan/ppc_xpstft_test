@@ -284,11 +284,11 @@ struct ov7670_win_size ov7670_win_sizes[] = {
 
 
 //Quick hack, approximately 1ms delay
-#if 0
+#if 1
 static void ms_delay(int us)
 {
    while (us-- > 0) {
-      volatile int x=5971;	// this is for milli sec
+      volatile int x=10000;	// this is for milli sec
       //volatile int x=597;		// this is for micro sec
       //volatile int x=30;		// this is for micro sec
       while (x-- > 0)
@@ -303,7 +303,7 @@ static void ms_delay(int us)
 int ov7670_set_hw(int hstart, int hstop, int vstart, int vstop)
 {
 	int ret = 0;
-	unsigned char v;
+	uint8_t v;
 	/*
 	 * Horizontal: 11 bits, top 8 live in hstart and hstop.  Bottom 3 of
 	 * hstart are in href[2:0], bottom 3 of hstop in href[5:3].  There is
@@ -311,18 +311,18 @@ int ov7670_set_hw(int hstart, int hstop, int vstart, int vstop)
 	 */
 	sccb_write_reg(REG_HSTART, (hstart >> 3) & 0xff);
 	sccb_write_reg(REG_HSTOP, (hstop >> 3) & 0xff);
-	sccb_read_reg(REG_HREF, &v);
+	v = sccb_read_reg(REG_HREF);
 	v = (v & 0xc0) | ((hstop & 0x7) << 3) | (hstart & 0x7);
-	ms_delay(10);
+	ms_delay(100);
 	sccb_write_reg(REG_HREF, v);
 	/*
 	 * Vertical: similar arrangement, but only 10 bits.
 	 */
 	sccb_write_reg(REG_VSTART, (vstart >> 2) & 0xff);
 	sccb_write_reg(REG_VSTOP, (vstop >> 2) & 0xff);
-	sccb_read_reg(REG_VREF, &v);
+	v = sccb_read_reg(REG_VREF);
 	v = (v & 0xf0) | ((vstop & 0x3) << 2) | (vstart & 0x3);
-	ms_delay(10);
+	ms_delay(100);
 	sccb_write_reg(REG_VREF, v);
 	return ret;
 }
@@ -337,12 +337,16 @@ static int ov7670_check_array(struct regval_list *vals)
 		if(vals->value == value) {
 			print("REG[0x");
 			putnum(vals->reg_num);
-			print("]     CHECKED\n");
+			print("]     [ OK ]\r\n");
 		}
 		else {
 			print("REG[0x");
 			putnum(vals->reg_num);
-			print("]     INVALID\n");
+			print("] : [0x");
+			putnum(vals->value);
+			print("] : [0x");
+			putnum(value);
+			print("]   INVALID\r\n");
 		}
 		vals++;
 	}
@@ -377,7 +381,7 @@ void ov7670_reg_check( void ) {
 	return;
 }
 
-void ov7670_Init( )
+void ov7670_init( )
 {
 	ov7670_reset();
 
@@ -393,6 +397,10 @@ void ov7670_Init( )
 	);
 
 	ms_delay( 500);
+
+	ov7670_check_array(ov7670_default_regs);
+	ov7670_check_array(ov7670_fmt_rgb565);
+
 #if 0
 	sccb_write_reg( 0x12, 0x80 );   // COM7[7]=1: Resets all registers to default values
 	sccb_write_reg( 0x12, 0x14 );   // COM7[2]=1: RGB selection

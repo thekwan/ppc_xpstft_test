@@ -22,6 +22,7 @@
 
 #include <stdio.h>
 #include "platform.h"
+#include "ov7670_eval_camera.h"
 #include "sccb.h"
 
 #define OV7670_DEV_SLAVE_ADDR 0x42
@@ -48,8 +49,8 @@ int main()
     print("\n\r");
     print("*****************************************\n\r");
 #else
+	sccb_reset( OV7670_DEV_SLAVE_ADDR );
 	ov7670_init();
-	ov7670_reg_check();
 #endif
 
     cleanup_platform();

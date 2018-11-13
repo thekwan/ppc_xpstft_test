@@ -8,7 +8,6 @@
 #ifndef SCCB_H_
 #define SCCB_H_
 
-#include <ppc-asm.h>
 #include "xio.h"
 #include "xparameters.h"
 
