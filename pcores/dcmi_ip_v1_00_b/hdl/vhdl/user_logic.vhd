@@ -271,6 +271,7 @@ architecture IMP of user_logic is
   signal mst_fifo_valid_write_xfer      : std_logic;
   signal mst_fifo_valid_read_xfer       : std_logic;
 
+  signal mst_cntl_pclk_pol              : std_logic;
   signal mst_cntl_oper_en               : std_logic;
   -- frame detector signal
 --signal pclk                           : std_logic;
@@ -295,6 +296,7 @@ architecture IMP of user_logic is
   signal dcmi_pixel_data_b              : std_logic_vector(0 to 4);
   signal dcmi_pixel_addr_read_en        : std_logic;
   signal base_addr                      : std_logic_vector(0 to 31);
+  signal PixelClk_pol                   : std_logic;
 
   signal data_bunch_size                : integer;
 	
@@ -448,6 +450,7 @@ begin
   -- rip control bits from master model registers
 --mst_cntl_rd_req   <= mst_reg(0)(0);
 --mst_cntl_wr_req   <= mst_reg(0)(1);
+  mst_cntl_pclk_pol <= mst_reg(0)(0);
   mst_cntl_oper_en  <= mst_reg(0)(1);
   mst_cntl_rd_req   <= '0';
   mst_cntl_wr_req   <= '1';
@@ -985,12 +988,15 @@ begin
 	end if;
   end process;
 
+  PixelClk_pol <= PixelClk when mst_cntl_pclk_pol = '0' else
+                  not PixelClk;
+
   FRAME_DETECTOR : entity dcmi_ip_v1_00_b.frame_det
     port map
 	(
       clk               => Bus2IP_Clk      ,
       reset             => Bus2IP_Reset    ,
-      pclk              => PixelClk        ,
+      pclk              => PixelClk_pol    ,
       pdata             => PixelData       ,
       VSYNC             => VSYNC           ,
       HREF              => HREF            ,

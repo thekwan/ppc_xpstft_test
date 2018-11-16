@@ -259,15 +259,32 @@ Net XCLK_25MHZ                LOC=G32  |  SLEW = FAST  |  DRIVE = 12  |  IOSTAND
 Net dcmi_ip_0_VSYNC_pin         LOC=J32  |  SLEW = SLOW                 |  IOSTANDARD=LVCMOS25;	# HDR1_14
 Net dcmi_ip_0_HREF_pin          LOC=J34  |  SLEW = SLOW                 |  IOSTANDARD=LVCMOS25;	# HDR1_16
 Net dcmi_ip_0_PixelClk_pin      LOC=L33  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_18
-Net dcmi_ip_0_PixelData_pin<0>  LOC=M32  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_20
-Net dcmi_ip_0_PixelData_pin<1>  LOC=P34  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_22
-Net dcmi_ip_0_PixelData_pin<2>  LOC=N34  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_24
-Net dcmi_ip_0_PixelData_pin<3>  LOC=AA34 |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_26
-Net dcmi_ip_0_PixelData_pin<4>  LOC=AD32 |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_28
-Net dcmi_ip_0_PixelData_pin<5>  LOC=Y34  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_30
-Net dcmi_ip_0_PixelData_pin<6>  LOC=Y32  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_32
-Net dcmi_ip_0_PixelData_pin<7>  LOC=W32  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_34
+#Net dcmi_ip_0_PixelData_pin<0>  LOC=M32  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_20
+#Net dcmi_ip_0_PixelData_pin<1>  LOC=P34  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_22
+#Net dcmi_ip_0_PixelData_pin<2>  LOC=N34  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_24
+#Net dcmi_ip_0_PixelData_pin<3>  LOC=AA34 |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_26
+#Net dcmi_ip_0_PixelData_pin<4>  LOC=AD32 |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_28
+#Net dcmi_ip_0_PixelData_pin<5>  LOC=Y34  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_30
+#Net dcmi_ip_0_PixelData_pin<6>  LOC=Y32  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_32
+#Net dcmi_ip_0_PixelData_pin<7>  LOC=W32  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_34
 
+#Net dcmi_ip_0_PixelData_pin<0>  LOC=W32  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_34
+#Net dcmi_ip_0_PixelData_pin<1>  LOC=M32  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_20
+#Net dcmi_ip_0_PixelData_pin<2>  LOC=Y32  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_32
+#Net dcmi_ip_0_PixelData_pin<3>  LOC=P34  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_22
+#Net dcmi_ip_0_PixelData_pin<4>  LOC=Y34  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_30
+#Net dcmi_ip_0_PixelData_pin<5>  LOC=N34  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_24
+#Net dcmi_ip_0_PixelData_pin<6>  LOC=AD32 |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_28
+#Net dcmi_ip_0_PixelData_pin<7>  LOC=AA34 |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_26
+
+Net dcmi_ip_0_PixelData_pin<0>  LOC=AA34  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_26
+Net dcmi_ip_0_PixelData_pin<1>  LOC=AD32  |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_28
+Net dcmi_ip_0_PixelData_pin<2>  LOC=N34   |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_24
+Net dcmi_ip_0_PixelData_pin<3>  LOC=Y34   |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_30
+Net dcmi_ip_0_PixelData_pin<4>  LOC=P34   |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_22
+Net dcmi_ip_0_PixelData_pin<5>  LOC=Y32   |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_32
+Net dcmi_ip_0_PixelData_pin<6>  LOC=M32   |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_20
+Net dcmi_ip_0_PixelData_pin<7>  LOC=W32   |  SLEW = FAST                 |  IOSTANDARD=LVCMOS25;	# HDR1_34
 
 ###### DDR2_SDRAM
 ############################################################################

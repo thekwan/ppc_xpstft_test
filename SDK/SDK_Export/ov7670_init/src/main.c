@@ -24,6 +24,8 @@
 #include "platform.h"
 #include "ov7670_eval_camera.h"
 #include "sccb.h"
+#include "xpstft.h"
+#include "dcmi.h"
 
 #define OV7670_DEV_SLAVE_ADDR 0x42
 
@@ -39,18 +41,36 @@ int main()
     print("* SCCB protocol Test Program            *\n\r");
 	sccb_reset( OV7670_DEV_SLAVE_ADDR );
 	//sccb_write_reg( 0xb4 , 0x5a );
-	reg = sccb_read_reg( 0x0A );
-    print(" PID reg value = 0x");
+	reg = sccb_read_reg( 0x11 );
+    print(" Reg[0x11] = 0x");
 	putnum( reg );
     print("\n\r");
-	reg = sccb_read_reg( 0x0B );
-    print(" VER reg value = 0x");
+
+	sccb_write_reg(0x11, 0x01);
+
+	reg = sccb_read_reg( 0x11 );
+    print(" Reg[0x11] = 0x");
 	putnum( reg );
     print("\n\r");
     print("*****************************************\n\r");
 #else
+#if 1
+	xpstft_example();
+#endif
+
+#if 1
+	print("OV7670 Camera sensor init\r\n");
 	sccb_reset( OV7670_DEV_SLAVE_ADDR );
 	ov7670_init();
+#endif
+
+#if 1
+	print("DCMI logic init\r\n");
+	dcmi_ip_reset();
+	dcmi_ip_set_addr( XPS_TFT_0_VIDEO_MEMORY_ADDR );
+	dcmi_ip_set_byte_en_reg( 0x00ff );
+	dcmi_ip_oper_enable(1);
+#endif
 #endif
 
     cleanup_platform();

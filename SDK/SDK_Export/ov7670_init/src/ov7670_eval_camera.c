@@ -12,7 +12,7 @@
  */
 
 struct regval_list ov7670_default_regs[] = {
-	{ REG_COM7, COM7_RESET },
+	//{ REG_COM7, COM7_RESET },
 	/*
 	 * Clock scale: 3 = 15fps
 	 *              2 = 20fps
@@ -89,6 +89,7 @@ struct regval_list ov7670_default_regs[] = {
 	{ 0x6a, 0x40 },		{ REG_BLUE, 0x40 },
 	{ REG_RED, 0x60 },
 	{ REG_COM8, COM8_FASTAEC|COM8_AECSTEP|COM8_BFILT|COM8_AGC|COM8_AEC|COM8_AWB },
+
 
 	/* Matrix coefficients */
 	{ 0x4f, 0x80 },		{ 0x50, 0x80 },
@@ -334,20 +335,18 @@ static int ov7670_check_array(struct regval_list *vals)
 {
 	while (vals->reg_num != 0xff || vals->value != 0xff) {
 		uint8_t value = sccb_read_reg(vals->reg_num);
-		if(vals->value == value) {
-			print("REG[0x");
-			putnum(vals->reg_num);
-			print("]     [ OK ]\r\n");
-		}
-		else {
-			print("REG[0x");
-			putnum(vals->reg_num);
-			print("] : [0x");
-			putnum(vals->value);
-			print("] : [0x");
-			putnum(value);
-			print("]   INVALID\r\n");
-		}
+		print("REG[0x");
+		putnum(vals->reg_num);
+		print("] : [0x");
+		putnum(vals->value);
+		print("] : [0x");
+		putnum(value);
+		print("]");
+		if(vals->value == value)
+			print("        [OK]\r\n");
+		else
+			print("        [DIFF]\r\n");
+
 		vals++;
 	}
 	return 0;
@@ -361,6 +360,7 @@ static int ov7670_write_array(struct regval_list *vals)
 	while (vals->reg_num != 0xff || vals->value != 0xff) {
 		sccb_write_reg(vals->reg_num, vals->value);
 		vals++;
+		ms_delay(1);
 	}
 	return 0;
 }
@@ -371,15 +371,10 @@ static int ov7670_write_array(struct regval_list *vals)
 static int ov7670_reset(void)
 {
 	sccb_write_reg(REG_COM7, COM7_RESET);
-	ms_delay(1000);
+	ms_delay(500);
 	return 0;
 }
 
-void ov7670_reg_check( void ) {
-	ov7670_check_array(ov7670_default_regs);
-	ov7670_check_array(ov7670_fmt_rgb565);
-	return;
-}
 
 void ov7670_init( )
 {
@@ -389,17 +384,21 @@ void ov7670_init( )
 	ov7670_write_array(ov7670_fmt_rgb565);
 	/* Setting window size */
 	//ov7670_write_array(ov7670_win_sizes[2]);
+#if 1
 	ov7670_set_hw(
 		ov7670_win_sizes[2].hstart, 
 		ov7670_win_sizes[2].hstop,
 		ov7670_win_sizes[2].vstart, 
 		ov7670_win_sizes[2].vstop
 	);
+#endif
 
 	ms_delay( 500);
 
-	ov7670_check_array(ov7670_default_regs);
-	ov7670_check_array(ov7670_fmt_rgb565);
+	//print("ov7670 reg check: default_reg\r\n");
+	//ov7670_check_array(ov7670_default_regs);
+	//print("ov7670 reg check: fmt_rgb565\r\n");
+	//ov7670_check_array(ov7670_fmt_rgb565);
 
 #if 0
 	sccb_write_reg( 0x12, 0x80 );   // COM7[7]=1: Resets all registers to default values
