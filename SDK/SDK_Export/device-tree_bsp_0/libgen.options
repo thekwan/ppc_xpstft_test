@@ -1,0 +1,3 @@
+PROCESSOR=ppc440_0
+REPOSITORIES=-lp /home/deokhwan/Work/FPGA/device-tree
+HWSPEC=../ppc_xpstft_test_hw_platform/system.xml
